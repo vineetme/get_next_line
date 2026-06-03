@@ -6,7 +6,7 @@
 /*   By: vmeharia <vmeharia@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 11:12:44 by vmeharia          #+#    #+#             */
-/*   Updated: 2026/06/03 15:33:53 by vmeharia         ###   ########.fr       */
+/*   Updated: 2026/06/03 15:45:53 by vmeharia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ static char	*read_and_stash(int fd, char *stash)
 	if (!buf)
 		return (NULL);
 	bytes = 0;
-	while ((!stash || !ft_strchr(stash, '\n'))
-	{ 
+	while (!stash || !ft_strchr(stash, '\n'))
+	{
 		bytes = read(fd, buf, BUFFER_SIZE);
 		if (bytes <= 0)
 			break ;
