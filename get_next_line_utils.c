@@ -6,7 +6,7 @@
 /*   By: vmeharia <vmeharia@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 11:12:58 by vmeharia          #+#    #+#             */
-/*   Updated: 2026/06/02 11:13:02 by vmeharia         ###   ########.fr       */
+/*   Updated: 2026/06/03 15:49:41 by vmeharia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 size_t	ft_strlen(const char *str)
 {
-	size_t 	i;
+	size_t	i;
+
 	i = 0;
 	while (str[i] != '\0')
 		i++;
@@ -34,7 +35,6 @@ char	*ft_strjoin(char *stash, char *buf)
 			return (NULL);
 		stash[0] = '\0';
 	}
-
 	len1 = ft_strlen(stash);
 	len2 = ft_strlen(buf);
 	ptr = malloc (len1 + len2 + 1);
@@ -106,4 +106,3 @@ char	*ft_strchr(char *str, int c)
 	}
 	return ((char *)&str[i]);
 }
-
