@@ -87,7 +87,7 @@ char	*clean_up(char *stash)
 	int		j;
 	char	*ptr;
 
-	if (!stash || !*stash)
+	if (!stash)
 		return (NULL);
 	i = 0;
 	while (stash[i] != '\n' && stash[i] != '\0')
