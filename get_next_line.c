@@ -38,9 +38,11 @@ static char	*read_and_stash(int fd, char *stash)
 	if (!buf)
 		return (NULL);
 	bytes = 0;
-	while ((!stash || !ft_strchr(stash, '\n')) 
-		&& (bytes = read(fd, buf, BUFFER_SIZE)) > 0)
-	{
+	while ((!stash || !ft_strchr(stash, '\n'))
+	{ 
+		bytes = read(fd, buf, BUFFER_SIZE);
+		if (bytes <= 0)
+			break ;
 		buf[bytes] = '\0';
 		stash = ft_strjoin(stash, buf);
 	}
