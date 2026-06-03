@@ -33,7 +33,6 @@ static char	*read_and_stash(int fd, char *stash)
 {
 	ssize_t	bytes;
 	char *buf;
-	char *temp;
 
 	buf = malloc(BUFFER_SIZE + 1);
 	if (!buf)
@@ -43,9 +42,7 @@ static char	*read_and_stash(int fd, char *stash)
 		&& (bytes = read(fd, buf, BUFFER_SIZE)) > 0)
 	{
 		buf[bytes] = '\0';
-		temp = stash;
 		stash = ft_strjoin(stash, buf);
-		free (temp);
 	}
 	free (buf);
 	if (bytes < 0)

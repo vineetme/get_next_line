@@ -30,6 +30,8 @@ char	*ft_strjoin(char *stash, char *buf)
 	if (!stash)
 	{
 		stash = malloc(1);
+		if (!stash)
+			return (NULL);
 		stash[0] = '\0';
 	}
 
@@ -91,4 +93,17 @@ size_t	ft_strlcat(char *dst, char *src, size_t dstsize)
 	}
 }
 
+char	*ft_strchr(char *str, int c)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i] != (char)c)
+	{
+		if (str[i] == '\0')
+			return (NULL);
+		i++;
+	}
+	return ((char *)&str[i]);
+}
 
